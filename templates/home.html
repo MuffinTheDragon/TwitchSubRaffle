@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='home.js') }}"></script>
+{% endblock %}
+
+{% block heading %}
+
+{% endblock %}
+ 
+{% block body %}
+
+	<a href="{{ url_for('index') }}">Back</a>
+
+	<hr>
+
+    <form>
+    	<div class="form-group">
+    		<label for="title">Enter Your Twitch Username or Display Name</label>
+    		<input id="title" class="form-control" name="title" type="text" aria-describedby="error" required>
+    		<small id="error">
+    	</div>
+        <input id="submit" class="btn btn-primary" type="button" value="Submit">
+    </form>
+    <hr>
+
+    <div id="sub_section">
+	    <h2 class="display-6" id="sub_count"></h2>
+
+		<input style="display: none;" id="select_sub" class="btn btn-primary" type="button" value="Select a Random Subscriber">
+
+		<h2 class="display-6" id="winner"></h2>
+	</div>
+
+{% endblock %} 

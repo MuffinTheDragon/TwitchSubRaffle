@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}
+
+{% block heading %}
+    Twitch Subscriber Raffle
+{% endblock %}
+ 
+{% block body %}
+
+    <hr>
+    <h2 class="display-6">What is it?</h2>
+    <p class="h6">This is a simple website where you can connect with your twitch account, and pick a random winner from all your subscribers.</p>
+
+    <hr>
+    <h2 class="display-6">How does it work?</h2>
+    <p class="h6">The website makes requests to the Twitch API to get a user's ID and list of subscribers. It then pseudo-randomly picks a winner.</p>
+
+    <hr>
+    <p class="h5">To get started:</p>
+
+    <a href="https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=8hmoymcr26qiaiomwfmqtrxexi723r&redirect_uri=http://127.0.0.1:5000/home&scope=user:read:email+channel:read:subscriptions&state=c3ab8aa609ea11e793ae92361f002671">Connect with Twitch!</a>
+{% endblock %} 
